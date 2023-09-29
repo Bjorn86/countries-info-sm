@@ -1,6 +1,3 @@
-// IMPORT STYLES
-import './App.scss';
-
 // APP CORE COMPONENT
 function App() {
   return (
