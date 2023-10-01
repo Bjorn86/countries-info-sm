@@ -1,10 +1,14 @@
 // IMPORT PACKAGES
-/* import {useEffect} from 'react'; */
 import { Link, Route, Routes } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
+
+// IMPORT ACTIONS
+import { setTheme } from '../../store/theme/themeActions';
 
 // IMPORT IMAGES
 import moon from '../../assets/icons/moon.svg';
+import moonFilled from '../../assets/icons/moon-filled.svg';
 
 // STYLES
 const HeaderElement = styled.header`
@@ -56,7 +60,8 @@ const Button = styled.button`
   outline: none;
   cursor: pointer;
   background:
-    url(${moon}) 3px center/18px no-repeat,
+    url(${(props) => (props.theme.themeName === 'light' ? moon : moonFilled)})
+      3px center/18px no-repeat,
     transparent;
   font-family: var(--family);
   font-size: var(--textM);
@@ -74,6 +79,15 @@ const Button = styled.button`
 
 // HEADER COMPONENT
 function Header() {
+  // HOOKS
+  const dispatch = useDispatch();
+  const theme = useSelector((state) => state.theme);
+
+  // TOGGLE THEME
+  const toggleTheme = () => {
+    dispatch(setTheme(theme === 'light' ? 'dark' : 'light'));
+  };
+
   return (
     <HeaderElement>
       <Wrapper>
@@ -88,7 +102,9 @@ function Header() {
             }
           />
         </Routes>
-        <Button type='button'>Dark Mode</Button>
+        <Button type='button' onClick={toggleTheme}>
+          {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+        </Button>
       </Wrapper>
     </HeaderElement>
   );
