@@ -1,10 +1,16 @@
+// IMPORT COMPONENTS
+import Header from '../UI/Header/Header';
+
+// IMPORT STYLES
+import GlobalStyles from '../styles/GlobalStyles';
+
 // APP CORE COMPONENT
 function App() {
   return (
-    <div className='app__content'>
-      <h1 className='title'>Test</h1>
-      <hr />
-    </div>
+    <>
+      <GlobalStyles />
+      <Header />
+    </>
   );
 }
 

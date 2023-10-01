@@ -1,4 +1,13 @@
-import '../src/index.scss';
+import { withThemeFromJSXProvider } from '@storybook/addon-styling';
+import GlobalStyles from '../src/styles/GlobalStyles';
+
+import '../src/index.css';
+
+export const decorators = [
+  withThemeFromJSXProvider({
+    GlobalStyles,
+  }),
+];
 
 /** @type { import('@storybook/react').Preview } */
 const preview = {
