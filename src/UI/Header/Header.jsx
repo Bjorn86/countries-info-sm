@@ -28,6 +28,16 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: 800px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @media screen and (max-width: 475px) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 `;
 
 const Title = styled.h1`
@@ -37,6 +47,14 @@ const Title = styled.h1`
   font-weight: 800;
   line-height: var(--lh);
   color: ${(props) => props.theme.textColor};
+
+  @media screen and (max-width: 800px) {
+    font-size: var(--textL);
+  }
+
+  @media screen and (max-width: 475px) {
+    font-size: var(--textS);
+  }
 `;
 
 const HeaderLink = styled(Link)`
@@ -74,6 +92,12 @@ const Button = styled.button`
   }
   &:focus-visible {
     border-color: var(--color-active);
+  }
+
+  @media screen and (max-width: 475px) {
+    width: 87px;
+    background-size: 16px;
+    font-size: var(--textXS);
   }
 `;
 
