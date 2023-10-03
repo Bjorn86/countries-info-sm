@@ -6,7 +6,7 @@ import {
 import Header from './Header';
 
 export default {
-  title: 'Header',
+  title: 'UI/Header',
   component: Header,
   tags: ['autodocs'],
   decorators: [withRouter],

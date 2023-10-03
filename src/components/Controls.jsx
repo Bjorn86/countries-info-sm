@@ -1,6 +1,10 @@
 // IMPORT PACKAGES
 import styled from 'styled-components';
 
+// IMPORT COMPONENTS
+import Search from '../UI/Search/Search';
+
+// STYLES
 const Section = styled.section`
   max-width: 1440px;
   box-sizing: border-box;
@@ -33,10 +37,13 @@ const Wrapper = styled.div`
   }
 `;
 
+// CONTROLS COMPONENT
 function Controls() {
   return (
     <Section>
-      <Wrapper />
+      <Wrapper>
+        <Search formId='search' placeholder='Search for a country...' />
+      </Wrapper>
     </Section>
   );
 }

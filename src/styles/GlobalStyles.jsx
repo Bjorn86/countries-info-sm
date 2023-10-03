@@ -5,7 +5,6 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyles = createGlobalStyle`
   :root {
     /* COLORS */
-    --color-input-text: hsl(0, 0%, 52%);
     --color-active: hsl(138, 17%, 61%);
 
     /* TYPOGRAPHY */
@@ -21,9 +20,10 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     margin: 0;
+    /* line-height: var(--lh); */
     /* font-family: var(--family); */
-    color: var(--color-text);
-    background-color: var(--color-bg);
+    /* color: var(--color-text);
+    background-color: var(--color-bg); */
   }
 `;
 

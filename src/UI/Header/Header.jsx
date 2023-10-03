@@ -14,9 +14,9 @@ import moonFilled from '../../assets/icons/moon-filled.svg';
 const HeaderElement = styled.header`
   max-width: 100%;
   flex: 0 1 auto;
-  background-color: ${(props) => props.theme.backgroundColor};
+  background-color: ${(props) => props.theme.colorUiBase};
   position: relative;
-  box-shadow: var(--shadow);
+  box-shadow: ${(props) => props.theme.shadow};
 `;
 
 const Wrapper = styled.div`

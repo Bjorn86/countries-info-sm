@@ -1,4 +1,5 @@
 // IMPORT PACKAGES
+import { Route, Routes } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 
@@ -8,6 +9,8 @@ import { lightTheme, darkTheme } from '../styles/themes';
 
 // IMPORT COMPONENTS
 import Header from '../UI/Header/Header';
+import Main from './Main';
+import HomePage from '../pages/HomePage';
 
 // APP CORE COMPONENT
 function App() {
@@ -21,6 +24,11 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Header />
+      <Main>
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+        </Routes>
+      </Main>
     </ThemeProvider>
   );
 }
