@@ -26,7 +26,7 @@ const CardsList = styled.ul`
   }
 `;
 
-/* const Item = styled.li`
+/* const ListItem = styled.li`
   width: 264px;
   border-radius: 5px;
   box-shadow: ${(props) => props.theme.shadow};
@@ -50,6 +50,7 @@ const CardsList = styled.ul`
   width: 460px;
   margin: 0 auto;
   padding-top: 80px;
+  font-family: var(--family);
   font-size: var(--textXXL);
   font-weight: 800;
   line-height: var(--lh);

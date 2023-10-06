@@ -84,6 +84,7 @@ const Button = styled.button`
   font-family: var(--family);
   font-size: var(--textM);
   font-weight: 600;
+  line-height: var(--lh);
   color: ${(props) => props.theme.textColor};
   text-align: right;
   transition: opacity 0.6s;

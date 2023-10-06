@@ -20,10 +20,6 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     margin: 0;
-    /* line-height: var(--lh); */
-    /* font-family: var(--family); */
-    /* color: var(--color-text);
-    background-color: var(--color-bg); */
   }
 `;
 
