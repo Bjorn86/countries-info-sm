@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 // IMPORT COMPONENTS
 import Search from '../UI/Search/Search';
+import Select from '../UI/Select/Select';
 
 // STYLES
 const Section = styled.section`
@@ -43,6 +44,7 @@ function Controls() {
     <Section>
       <Wrapper>
         <Search formId='search' placeholder='Search for a country...' />
+        <Select />
       </Wrapper>
     </Section>
   );
