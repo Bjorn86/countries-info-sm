@@ -6,6 +6,9 @@ import axios from 'axios';
 // IMPORT REDUCERS
 import { rootReducer } from './rootReducer';
 
+// OTHER IMPORTS
+import * as api from '../utils/api';
+
 // COMPOSE ENHANCERS
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -16,6 +19,7 @@ const store = createStore(
     applyMiddleware(
       thunk.withExtraArgument({
         client: axios,
+        api,
       }),
     ),
   ),

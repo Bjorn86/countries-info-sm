@@ -64,12 +64,12 @@ const Accent = styled.span`
 `;
 
 // CARD COMPONENT
-function Card({ img, name, population, region, capital }) {
+function Card({ flags, name, population, region, capital }) {
   return (
     <CardWrapper>
-      <Flag src={img.svg} alt={img.alt} />
+      <Flag src={flags.svg} alt={flags.alt || `The flag of ${name.common}}`} />
       <DescriptionWrapper>
-        <CountryName>{name}</CountryName>
+        <CountryName>{name.common}</CountryName>
         <List>
           <ListItem>
             <Accent>Population:</Accent>{' '}
@@ -79,7 +79,8 @@ function Card({ img, name, population, region, capital }) {
             <Accent>Region:</Accent> {region}
           </ListItem>
           <ListItem>
-            <Accent>Capital:</Accent> {capital.join(', ')}
+            <Accent>Capital:</Accent>{' '}
+            {capital.join(', ') || 'there is no capital'}
           </ListItem>
         </List>
       </DescriptionWrapper>
@@ -90,11 +91,13 @@ function Card({ img, name, population, region, capital }) {
 export default Card;
 
 Card.propTypes = {
-  img: PropTypes.shape({
+  flags: PropTypes.shape({
     svg: PropTypes.string,
     alt: PropTypes.string,
   }).isRequired,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.shape({
+    common: PropTypes.string,
+  }).isRequired,
   population: PropTypes.number.isRequired,
   region: PropTypes.string.isRequired,
   capital: PropTypes.arrayOf(PropTypes.string).isRequired,
