@@ -8,21 +8,32 @@ import { rootReducer } from './rootReducer';
 
 // OTHER IMPORTS
 import * as api from '../utils/api';
-
-// COMPOSE ENHANCERS
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+import { loadState, saveState } from '../utils/utils';
 
 // STORE
-const store = createStore(
-  rootReducer,
-  composeEnhancers(
-    applyMiddleware(
-      thunk.withExtraArgument({
-        client: axios,
-        api,
-      }),
-    ),
-  ),
-);
+export const configureStore = () => {
+  const persistedState = loadState();
+  const composeEnhancers =
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export default store;
+  const store = createStore(
+    rootReducer,
+    persistedState,
+    composeEnhancers(
+      applyMiddleware(
+        thunk.withExtraArgument({
+          client: axios,
+          api,
+        }),
+      ),
+    ),
+  );
+
+  store.subscribe(() => {
+    saveState({
+      theme: store.getState().theme,
+    });
+  });
+
+  return store;
+};

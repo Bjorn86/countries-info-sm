@@ -1,6 +1,13 @@
 // IMPORT PACKAGES
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+
+// IMPORT SELECTORS
+import { selectSearch } from '../../store/controls/controlsSelectors';
+
+// IMPORT ACTIONS
+import { setSearch } from '../../store/controls/controlsActions';
 
 // IMPORT IMAGES
 import loupe from '../../assets/icons/search.svg';
@@ -58,9 +65,22 @@ const Input = styled.input.attrs({
 
 // SEARCH COMPONENT
 function Search({ formId, placeholder }) {
+  // HOOKS
+  const dispatch = useDispatch();
+  const search = useSelector(selectSearch);
+
+  const handleSearch = (evt) => {
+    dispatch(setSearch(evt.target.value));
+  };
+
   return (
     <FormElement id={formId} noValidate>
-      <Input placeholder={placeholder} form={formId} />
+      <Input
+        placeholder={placeholder}
+        form={formId}
+        onChange={handleSearch}
+        value={search}
+      />
     </FormElement>
   );
 }

@@ -1,7 +1,14 @@
 // IMPORT PACKAGES
 import { useCallback, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
+
+// IMPORT SELECTORS
+import { selectRegion } from '../../store/controls/controlsSelectors';
+
+// IMPORT ACTIONS
+import { setRegion } from '../../store/controls/controlsActions';
 
 // IMPORT IMAGES
 import down from '../../assets/icons/chevron-down.svg';
@@ -125,23 +132,33 @@ const Item = styled.li.attrs({
 function Select() {
   // HOOKS
   const [isMenuOpen, setMenuStatus] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(0);
+  const dispatch = useDispatch();
+  const region = useSelector(selectRegion);
 
-  // SET SELECTED OPTION AND CLOSE DROPDOWN MENU
-  const setOptionAndClose = (index) => {
-    setSelectedOption(index);
-    setMenuStatus(false);
-  };
+  // VARIABLES
+  const currentOption = OPTIONS_LIST.indexOf(region);
 
-  // TOGGLE OPEN\CLOSE MENU OPTIONS
+  // SET SELECTED OPTION AND CLOSE OPTIONS MENU
+  const setOptionAndClose = useCallback(
+    (index) => {
+      dispatch(setRegion(OPTIONS_LIST[index]));
+      setMenuStatus(false);
+    },
+    [dispatch],
+  );
+
+  // TOGGLE OPEN/CLOSE OPTIONS MENU
   const toggleOptionMenu = useCallback(() => {
     setMenuStatus(!isMenuOpen);
   }, [isMenuOpen]);
 
   // SWITCH OPTION
-  const switchOption = (index) => {
-    setSelectedOption(index);
-  };
+  const switchOption = useCallback(
+    (index) => {
+      dispatch(setRegion(OPTIONS_LIST[index]));
+    },
+    [dispatch],
+  );
 
   // HANDLE KEY EVENTS
   const handleKeyEvents = useCallback(
@@ -155,14 +172,14 @@ function Select() {
           break;
         case KEYS.ARROW_UP_KEY:
           switchOption(
-            selectedOption - 1 >= 0
-              ? selectedOption - 1
+            currentOption - 1 >= 0
+              ? currentOption - 1
               : OPTIONS_LIST.length - 1,
           );
           break;
         case KEYS.ARROW_DOWN_KEY:
           switchOption(
-            selectedOption === OPTIONS_LIST.length - 1 ? 0 : selectedOption + 1,
+            currentOption === OPTIONS_LIST.length - 1 ? 0 : currentOption + 1,
           );
           break;
         case KEYS.HOME_KEY:
@@ -173,13 +190,19 @@ function Select() {
           break;
         case KEYS.SPACE_BAR_KEY:
         case KEYS.ENTER_KEY:
-          setOptionAndClose(selectedOption);
+          setOptionAndClose(currentOption);
           break;
         default:
           break;
       }
     },
-    [isMenuOpen, selectedOption, toggleOptionMenu],
+    [
+      isMenuOpen,
+      setOptionAndClose,
+      switchOption,
+      toggleOptionMenu,
+      currentOption,
+    ],
   );
 
   return (
@@ -189,11 +212,11 @@ function Select() {
         onKeyDown={handleKeyEvents}
         aria-expanded={isMenuOpen}
       >
-        {OPTIONS_LIST[selectedOption]}
+        {region}
       </Button>
       <List
-        aria-activedescendant={OPTIONS_LIST[selectedOption]}
-        aria-labelledby={OPTIONS_LIST[selectedOption]}
+        aria-activedescendant={region}
+        aria-labelledby={region}
         tabIndex={0}
         onKeyDown={handleKeyEvents}
         $isMenuOpen={isMenuOpen}
@@ -202,7 +225,7 @@ function Select() {
           <Item
             key={uuidv4()}
             id={option}
-            aria-selected={selectedOption === index}
+            aria-selected={currentOption === index}
             tabIndex={0}
             onKeyDown={handleKeyEvents}
             onClick={() => {

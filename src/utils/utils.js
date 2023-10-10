@@ -1,9 +1,25 @@
-// IMPORT VARIABLES
-import BASE_URL from './constants';
+// LOAD STATE FROM LOCAL STORAGE
+export const loadState = () => {
+  try {
+    const savedState = localStorage.getItem('state');
 
-// HANDLER SEARCH BY COUNTRY
-export const searchByCountry = (name) => `${BASE_URL}name/${name}`;
+    if (savedState === null) {
+      return undefined;
+    }
 
-// HANDLER FILTER BY CODE
-export const filterByCode = (codes) =>
-  `${BASE_URL}alpha?codes=${codes.join(',')}`;
+    return JSON.parse(savedState);
+  } catch (error) {
+    return undefined;
+  }
+};
+
+// SAVE STATE TO LOCAL STORAGE
+export const saveState = (state) => {
+  try {
+    const stateToBeSaved = JSON.stringify(state);
+
+    localStorage.setItem('state', stateToBeSaved);
+  } catch (error) {
+    console.error(error);
+  }
+};

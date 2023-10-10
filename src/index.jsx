@@ -7,11 +7,14 @@ import { Provider } from 'react-redux';
 // IMPORT STYLES
 import './index.css';
 
-// IMPORT STORE
-import store from './store/index';
+// IMPORT CONFIGURE STORE
+import { configureStore } from './store/index';
 
 // IMPORT COMPONENTS
 import App from './components/App';
+
+// CREATE STORE
+const store = configureStore();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

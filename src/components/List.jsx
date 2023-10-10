@@ -12,9 +12,10 @@ import Card from '../UI/Card/Card';
 
 // IMPORT SELECTORS
 import {
-  selectAllCountries,
+  selectVisibleCountries,
   selectCountriesInfo,
 } from '../store/countries/countriesSelectors';
+import { selectControls } from '../store/controls/controlsSelectors';
 
 // IMPORT ACTIONS
 import { loadCountries } from '../store/countries/countriesActions';
@@ -87,7 +88,10 @@ const Info = styled.p`
 function List() {
   // HOOKS
   const dispatch = useDispatch();
-  const countries = useSelector(selectAllCountries);
+  const { search, region } = useSelector(selectControls);
+  const countries = useSelector((state) =>
+    selectVisibleCountries(state, { search, region }),
+  );
   const { status, error, qty } = useSelector(selectCountriesInfo);
 
   useEffect(() => {
@@ -98,9 +102,13 @@ function List() {
 
   return (
     <Container>
-      {/* TODO Сделать заглушку для пустого массива при поиске */}
       {error && <Info>Can't fetch data</Info>}
       {status === 'loading' && <Preloader />}
+      {status === 'received' && !countries.length && (
+        <Info>
+          The search yielded no results. Please change the search query.
+        </Info>
+      )}
       {status === 'received' && (
         <CardsList>
           {countries.map((country) => (
