@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 // IMPORT ACTIONS
 import { setTheme } from '../../store/theme/themeActions';
+import { clearControls } from '../../store/controls/controlsActions';
 
 // IMPORT IMAGES
 import moon from '../../assets/icons/moon.svg';
@@ -113,6 +114,11 @@ function Header() {
     dispatch(setTheme(theme === 'light' ? 'dark' : 'light'));
   };
 
+  // HANDLER CLEAR CONTROLS
+  const handleClearControls = () => {
+    dispatch(clearControls());
+  };
+
   return (
     <HeaderElement>
       <Wrapper>
@@ -121,7 +127,7 @@ function Header() {
           <Route
             path=':countryCode'
             element={
-              <HeaderLink to='/'>
+              <HeaderLink to='/' onClick={handleClearControls}>
                 <Title as='h2'>Where in the world?</Title>
               </HeaderLink>
             }
