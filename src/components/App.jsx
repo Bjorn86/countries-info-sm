@@ -11,6 +11,7 @@ import { lightTheme, darkTheme } from '../styles/themes';
 import Header from '../UI/Header/Header';
 import Main from './Main';
 import HomePage from '../pages/HomePage';
+import DetailPage from '../pages/DetailPage';
 
 // APP CORE COMPONENT
 function App() {
@@ -27,6 +28,7 @@ function App() {
       <Main>
         <Routes>
           <Route path='/' element={<HomePage />} />
+          <Route path='/country/:code' element={<DetailPage />} />
         </Routes>
       </Main>
     </ThemeProvider>

@@ -6,17 +6,18 @@ import PropTypes from 'prop-types';
 const Section = styled.section`
   max-width: 1440px;
   box-sizing: border-box;
-  padding: 0 80px;
+  padding: ${(props) => (props.$detail ? '80px' : '0 80px')};
   margin: 0 auto;
 
   @media screen and (max-width: 800px) {
     padding-left: 30px;
     padding-right: 30px;
+    ${(props) => props.$detail && 'padding-top: 40px;'}
   }
 
   @media screen and (max-width: 475px) {
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: ${(props) => (props.$detail ? '28px' : '16px')};
+    padding-right: ${(props) => (props.$detail ? '28px' : '16px')};
   }
 `;
 
