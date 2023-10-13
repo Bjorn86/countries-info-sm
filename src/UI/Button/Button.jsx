@@ -39,18 +39,19 @@ const ButtonElement = styled.button`
     height: 32px;
     width: 104px;
     padding-left: 25px;
-    background-size: 24px;
-    background-position: center 16px;
+    background-size: 16px;
+    background-position: 24px center;
     font-size: var(--textS);
   }
 `;
 
-function Button({ text }) {
-  return <ButtonElement>{text}</ButtonElement>;
+function Button({ children, onClick }) {
+  return <ButtonElement onClick={onClick}>{children}</ButtonElement>;
 }
 
 export default Button;
 
 Button.propTypes = {
-  text: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 };

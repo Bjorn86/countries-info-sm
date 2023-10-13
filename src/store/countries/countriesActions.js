@@ -2,16 +2,16 @@
 import { SET_COUNTRIES, SET_LOADING, SET_ERROR } from './constants';
 
 // ACTIONS
-export const setCountries = (countries) => ({
+const setCountries = (countries) => ({
   type: SET_COUNTRIES,
   payload: countries,
 });
 
-export const setLoading = () => ({
+const setLoading = () => ({
   type: SET_LOADING,
 });
 
-export const setError = (err) => ({
+const setError = (err) => ({
   type: SET_ERROR,
   payload: err,
 });

@@ -36,12 +36,13 @@ const BorderLink = styled(Link)`
   }
 `;
 
-function CountryLink({ text }) {
-  return <BorderLink>{text}</BorderLink>;
+function CountryLink({ children, to }) {
+  return <BorderLink to={to}>{children}</BorderLink>;
 }
 
 export default CountryLink;
 
 CountryLink.propTypes = {
-  text: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
 };

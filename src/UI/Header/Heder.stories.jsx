@@ -16,10 +16,10 @@ export const FromDetailPage = {
   parameters: {
     reactRouter: reactRouterParameters({
       location: {
-        pathParams: { countryCode: 'abc' },
+        pathParams: { code: 'maf' },
       },
       routing: {
-        path: ':countryCode',
+        path: '/country/:code',
       },
     }),
   },

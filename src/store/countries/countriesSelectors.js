@@ -6,15 +6,12 @@ export const selectCountriesInfo = createSelector(
   (state) => state.countries.status,
   (state) => state.countries.error,
   (state) => state.countries.list.length,
-  (status, error, count) => ({
+  (status, error, qty) => ({
     status,
     error,
-    count,
+    qty,
   }),
 );
-
-// TODO Сейчас нигде не используется
-export const selectAllCountries = (state) => state.countries.list;
 
 export const selectVisibleCountries = createSelector(
   (state) => state.countries.list,
