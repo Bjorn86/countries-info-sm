@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/countries-info-sm/static/css/main.cf681cea.css",
+    "main.js": "/countries-info-sm/static/js/main.1d489d67.js",
+    "static/media/NunitoSans-ExtraBold.woff": "/countries-info-sm/static/media/NunitoSans-ExtraBold.dd38e29a0a91857568fd.woff",
+    "static/media/NunitoSans-Bold.woff": "/countries-info-sm/static/media/NunitoSans-Bold.0bdd3b095d02935f6bfe.woff",
+    "static/media/NunitoSans-Light.woff": "/countries-info-sm/static/media/NunitoSans-Light.b6057d4cbe9c49a8c6c2.woff",
+    "static/media/NunitoSans-ExtraBold.woff2": "/countries-info-sm/static/media/NunitoSans-ExtraBold.c7f576e665dcd5cd38cb.woff2",
+    "static/media/NunitoSans-Bold.woff2": "/countries-info-sm/static/media/NunitoSans-Bold.9c4cdbefdbac045118a3.woff2",
+    "static/media/NunitoSans-Light.woff2": "/countries-info-sm/static/media/NunitoSans-Light.f6df5a7b0879074ab9b7.woff2",
+    "static/media/spinner.svg": "/countries-info-sm/static/media/spinner.f26a2ab3566a66b85f76814833e6d346.svg",
+    "index.html": "/countries-info-sm/index.html",
+    "static/media/moon.svg": "/countries-info-sm/static/media/moon.2129577db9c00aaa71d763c759f31a5e.svg",
+    "static/media/search.svg": "/countries-info-sm/static/media/search.88d99e0db0a31599f7150c4f3b04baf7.svg",
+    "static/media/search-filled.svg": "/countries-info-sm/static/media/search-filled.46f408a2e76bfc0e92ec8b855e72f4e2.svg",
+    "static/media/moon-filled.svg": "/countries-info-sm/static/media/moon-filled.126e8b94f5cddab156226e235fed71a5.svg",
+    "static/media/arrow-left-long-filled.svg": "/countries-info-sm/static/media/arrow-left-long-filled.f23915f17825321104ecff662900951c.svg",
+    "static/media/arrow-left-long.svg": "/countries-info-sm/static/media/arrow-left-long.3bcca80fbff2d2075c0d999e1b1689ba.svg",
+    "static/media/chevron-down.svg": "/countries-info-sm/static/media/chevron-down.5dc527e0a3089d38fc4ab8fd69e2fcbd.svg",
+    "static/media/chevron-down-filled.svg": "/countries-info-sm/static/media/chevron-down-filled.1d142674dfa90da34a803f5ebf9337b9.svg",
+    "main.cf681cea.css.map": "/countries-info-sm/static/css/main.cf681cea.css.map",
+    "main.1d489d67.js.map": "/countries-info-sm/static/js/main.1d489d67.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cf681cea.css",
+    "static/js/main.1d489d67.js"
+  ]
+}
