@@ -5,8 +5,11 @@ export default {
   component: Button,
   tags: ['autodocs'],
   argTypes: {
-    text: {
+    children: {
       description: 'Button text',
+    },
+    onClick: {
+      description: 'Button click handler',
     },
   },
 };
@@ -15,5 +18,6 @@ const Template = (args) => <Button {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  text: 'Back',
+  children: 'Back',
+  onClick: () => {},
 };

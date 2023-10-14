@@ -1,7 +1,4 @@
-import {
-  withRouter,
-  reactRouterParameters,
-} from 'storybook-addon-react-router-v6';
+import { withRouter } from 'storybook-addon-react-router-v6';
 
 import Header from './Header';
 
@@ -12,20 +9,7 @@ export default {
   decorators: [withRouter],
 };
 
-export const FromDetailPage = {
-  parameters: {
-    reactRouter: reactRouterParameters({
-      location: {
-        pathParams: { code: 'maf' },
-      },
-      routing: {
-        path: '/country/:code',
-      },
-    }),
-  },
-};
-
 const Template = (args) => <Header {...args} />;
 
-export const LightTheme = Template.bind({});
-LightTheme.args = {};
+export const Default = Template.bind({});
+Default.args = {};

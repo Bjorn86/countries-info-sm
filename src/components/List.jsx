@@ -24,7 +24,7 @@ import { loadCountries } from '../store/countries/countriesActions';
 const CardsList = styled.ul`
   width: 100%;
   padding: 0;
-  margin: 48px 0 0;
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(264px, 1fr));
   gap: 76px 74px;
@@ -101,7 +101,7 @@ function List() {
   }, [dispatch, qty]);
 
   return (
-    <Container>
+    <Container $list>
       {error && <Info>Can't fetch data</Info>}
       {status === 'loading' && <Preloader />}
       {status === 'received' && !countries.length && (

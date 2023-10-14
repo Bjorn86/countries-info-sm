@@ -23,7 +23,7 @@ const Wrapper = styled.div`
 // CONTROLS COMPONENT
 function Controls() {
   return (
-    <Container>
+    <Container $controls>
       <Wrapper>
         <Search formId='search' placeholder='Search for a country...' />
         <Select />

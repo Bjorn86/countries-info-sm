@@ -125,7 +125,7 @@ function Header() {
         <Routes>
           <Route path='/' element={<Title>Where in the world?</Title>} />
           <Route
-            path='/country/:code'
+            path='*'
             element={
               <HeaderLink to='/' onClick={handleClearControls}>
                 <Title as='h2'>Where in the world?</Title>

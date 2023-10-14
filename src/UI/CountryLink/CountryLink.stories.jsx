@@ -8,8 +8,11 @@ export default {
   tags: ['autodocs'],
   decorators: [withRouter],
   argTypes: {
-    text: {
+    children: {
       description: 'Link text',
+    },
+    to: {
+      description: 'Link href',
     },
   },
 };
@@ -18,5 +21,6 @@ const Template = (args) => <CountryLink {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  text: 'Russia',
+  children: 'Russia',
+  to: '/country/rus',
 };

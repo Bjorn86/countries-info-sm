@@ -69,7 +69,7 @@ function DetailPage() {
   }, [dispatch, code]);
 
   return (
-    <Container $detail>
+    <Container $details>
       <Button onClick={handleBtnBackClick}>Back</Button>
       {error && <Info>Can't fetch data</Info>}
       {status === 'loading' && <Preloader />}

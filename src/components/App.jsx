@@ -12,6 +12,7 @@ import Header from '../UI/Header/Header';
 import Main from './Main';
 import HomePage from '../pages/HomePage';
 import DetailPage from '../pages/DetailPage';
+import NotFound from '../pages/NotFound';
 
 // APP CORE COMPONENT
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/country/:code' element={<DetailPage />} />
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </Main>
     </ThemeProvider>
