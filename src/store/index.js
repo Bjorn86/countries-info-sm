@@ -1,5 +1,5 @@
 // IMPORT PACKAGES
-import { createStore, compose, applyMiddleware } from 'redux';
+/* import { createStore, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import axios from 'axios';
 
@@ -36,4 +36,4 @@ export const configureStore = () => {
   });
 
   return store;
-};
+}; */

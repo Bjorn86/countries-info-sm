@@ -1,15 +1,13 @@
 // IMPORT PACKAGES
 import { Link, Route, Routes } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
-// IMPORT ACTIONS
-import { setTheme } from '../../store/theme/themeActions';
-import { clearControls } from '../../store/controls/controlsActions';
+// IMPORT COMPONENTS
+import ThemeSwitcher from '../../features/theme/ThemeSwitcher';
 
-// IMPORT IMAGES
-import moon from '../../assets/icons/moon.svg';
-import moonFilled from '../../assets/icons/moon-filled.svg';
+// IMPORT ACTIONS
+import { clearControls } from '../../store/controls/controlsActions';
 
 // STYLES
 const HeaderElement = styled.header`
@@ -71,48 +69,10 @@ const HeaderLink = styled(Link)`
   }
 `;
 
-const Button = styled.button`
-  width: 112px;
-  height: 24px;
-  padding: 0;
-  border: 1px solid transparent;
-  outline: none;
-  cursor: pointer;
-  background:
-    url(${(props) => (props.theme.themeName === 'light' ? moon : moonFilled)})
-      3px center/18px no-repeat,
-    transparent;
-  font-family: var(--family);
-  font-size: var(--textM);
-  font-weight: 600;
-  line-height: var(--lh);
-  color: ${(props) => props.theme.textColor};
-  text-align: right;
-  transition: opacity 0.6s;
-  &:hover {
-    opacity: 0.6;
-  }
-  &:focus-visible {
-    border-color: var(--color-active);
-  }
-
-  @media screen and (max-width: 475px) {
-    width: 87px;
-    background-size: 16px;
-    font-size: var(--textXS);
-  }
-`;
-
 // HEADER COMPONENT
 function Header() {
   // HOOKS
   const dispatch = useDispatch();
-  const theme = useSelector((state) => state.theme);
-
-  // TOGGLE THEME
-  const toggleTheme = () => {
-    dispatch(setTheme(theme === 'light' ? 'dark' : 'light'));
-  };
 
   // HANDLER CLEAR CONTROLS
   const handleClearControls = () => {
@@ -133,9 +93,7 @@ function Header() {
             }
           />
         </Routes>
-        <Button type='button' onClick={toggleTheme}>
-          {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-        </Button>
+        <ThemeSwitcher />
       </Wrapper>
     </HeaderElement>
   );

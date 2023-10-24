@@ -12,6 +12,7 @@
   "homepage": "https://bjorn86.github.io/countries-info-sm/",
   "author": "Danila Legkobytov <legkobytov-danila@yandex.ru>",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.7",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -24,7 +25,7 @@
     "react-router-dom": "^6.16.0",
     "react-scripts": "5.0.1",
     "redux": "^4.2.1",
-    "redux-thunk": "^2.4.2",
+    "redux-persist": "^6.0.0",
     "reselect": "^4.1.8",
     "styled-components": "^6.0.8",
     "uuid": "^9.0.1",
