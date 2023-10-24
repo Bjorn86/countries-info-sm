@@ -1,13 +1,12 @@
 // IMPORT PACKAGES
 import { Link, Route, Routes } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
 // IMPORT COMPONENTS
 import ThemeSwitcher from '../../features/theme/ThemeSwitcher';
 
-// IMPORT ACTIONS
-import { clearControls } from '../../store/controls/controlsActions';
+// IMPORT HOOKS
+import { useClearControls } from '../../features/controls/useClearControls';
 
 // STYLES
 const HeaderElement = styled.header`
@@ -72,12 +71,7 @@ const HeaderLink = styled(Link)`
 // HEADER COMPONENT
 function Header() {
   // HOOKS
-  const dispatch = useDispatch();
-
-  // HANDLER CLEAR CONTROLS
-  const handleClearControls = () => {
-    dispatch(clearControls());
-  };
+  const handleClearControls = useClearControls();
 
   return (
     <HeaderElement>

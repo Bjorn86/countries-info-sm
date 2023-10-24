@@ -16,6 +16,7 @@ import axios from 'axios';
 
 // IMPORT REDUCERS
 import { themeReducer } from './features/theme/themeSlice';
+import { controlsReducer } from './features/controls/controlsSlice';
 
 // OTHER IMPORTS
 import * as api from './utils/api';
@@ -23,6 +24,7 @@ import * as api from './utils/api';
 // ROOT REDUCER
 const rootReducer = combineReducers({
   theme: themeReducer,
+  controls: controlsReducer,
 });
 
 // PERSIST CONFIG

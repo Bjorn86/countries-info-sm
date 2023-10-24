@@ -1,14 +1,10 @@
 // IMPORT PACKAGES
 import { useCallback, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 
-// IMPORT SELECTORS
-import { selectRegion } from '../../store/controls/controlsSelectors';
-
-// IMPORT ACTIONS
-import { setRegion } from '../../store/controls/controlsActions';
+// IMPORT HOOKS
+import { useRegion } from './useRegion';
 
 // IMPORT IMAGES
 import down from '../../assets/icons/chevron-down.svg';
@@ -132,32 +128,23 @@ const Item = styled.li.attrs({
 function Select() {
   // HOOKS
   const [isMenuOpen, setMenuStatus] = useState(false);
-  const dispatch = useDispatch();
-  const region = useSelector(selectRegion);
+  const [region, switchOption] = useRegion();
 
   // VARIABLES
   const currentOption = OPTIONS_LIST.indexOf(region);
-
-  // SET SELECTED OPTION AND CLOSE OPTIONS MENU
-  const setOptionAndClose = useCallback(
-    (index) => {
-      dispatch(setRegion(OPTIONS_LIST[index]));
-      setMenuStatus(false);
-    },
-    [dispatch],
-  );
 
   // TOGGLE OPEN/CLOSE OPTIONS MENU
   const toggleOptionMenu = useCallback(() => {
     setMenuStatus(!isMenuOpen);
   }, [isMenuOpen]);
 
-  // SWITCH OPTION
-  const switchOption = useCallback(
+  // SET SELECTED OPTION AND CLOSE OPTIONS MENU
+  const setOptionAndClose = useCallback(
     (index) => {
-      dispatch(setRegion(OPTIONS_LIST[index]));
+      switchOption(index, OPTIONS_LIST);
+      setMenuStatus(false);
     },
-    [dispatch],
+    [switchOption],
   );
 
   // HANDLE KEY EVENTS
@@ -175,18 +162,20 @@ function Select() {
             currentOption - 1 >= 0
               ? currentOption - 1
               : OPTIONS_LIST.length - 1,
+            OPTIONS_LIST,
           );
           break;
         case KEYS.ARROW_DOWN_KEY:
           switchOption(
             currentOption === OPTIONS_LIST.length - 1 ? 0 : currentOption + 1,
+            OPTIONS_LIST,
           );
           break;
         case KEYS.HOME_KEY:
-          switchOption(0);
+          switchOption(0, OPTIONS_LIST);
           break;
         case KEYS.END_KEY:
-          switchOption(OPTIONS_LIST.length - 1);
+          switchOption(OPTIONS_LIST.length - 1, OPTIONS_LIST);
           break;
         case KEYS.SPACE_BAR_KEY:
         case KEYS.ENTER_KEY:

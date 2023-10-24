@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 // IMPORT COMPONENTS
 import Container from './Container';
-import Search from '../UI/Search/Search';
-import Select from '../UI/Select/Select';
+import Search from '../features/controls/Search';
+import Select from '../features/controls/Select';
 
 // STYLES
 const Wrapper = styled.div`

@@ -15,7 +15,7 @@ import {
   selectVisibleCountries,
   selectCountriesInfo,
 } from '../store/countries/countriesSelectors';
-import { selectControls } from '../store/controls/controlsSelectors';
+import { selectControls } from '../features/controls/controlsSelectors';
 
 // IMPORT ACTIONS
 import { loadCountries } from '../store/countries/countriesActions';
