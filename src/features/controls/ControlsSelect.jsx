@@ -125,7 +125,7 @@ const Item = styled.li.attrs({
 `;
 
 // SELECT COMPONENT
-function Select() {
+function ControlsSelect() {
   // HOOKS
   const [isMenuOpen, setMenuStatus] = useState(false);
   const [region, switchOption] = useRegion();
@@ -229,4 +229,4 @@ function Select() {
   );
 }
 
-export default Select;
+export default ControlsSelect;

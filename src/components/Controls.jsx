@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 // IMPORT COMPONENTS
 import Container from './Container';
-import Search from '../features/controls/Search';
-import Select from '../features/controls/Select';
+import ControlsSearch from '../features/controls/ControlsSearch';
+import ControlsSelect from '../features/controls/ControlsSelect';
 
 // STYLES
 const Wrapper = styled.div`
@@ -25,8 +25,8 @@ function Controls() {
   return (
     <Container $controls>
       <Wrapper>
-        <Search formId='search' placeholder='Search for a country...' />
-        <Select />
+        <ControlsSearch formId='search' placeholder='Search for a country...' />
+        <ControlsSelect />
       </Wrapper>
     </Container>
   );

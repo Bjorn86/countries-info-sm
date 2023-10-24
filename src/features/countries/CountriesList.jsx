@@ -1,24 +1,15 @@
 // IMPORT PACKAGES
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 
 // IMPORT COMPONENTS
-import Container from './Container';
-import Preloader from '../UI/Preloader/Preloader';
-import Card from '../UI/Card/Card';
+import Container from '../../components/Container';
+import Preloader from '../../UI/Preloader/Preloader';
+import Card from '../../UI/Card/Card';
 
-// IMPORT SELECTORS
-import {
-  selectVisibleCountries,
-  selectCountriesInfo,
-} from '../store/countries/countriesSelectors';
-import { selectControls } from '../features/controls/controlsSelectors';
-
-// IMPORT ACTIONS
-import { loadCountries } from '../store/countries/countriesActions';
+// IMPORT HOOKS
+import { useCountries } from './useCountries';
 
 // STYLES
 const CardsList = styled.ul`
@@ -85,20 +76,9 @@ const Info = styled.p`
 `;
 
 // LIST COMPONENT
-function List() {
+function CountriesList() {
   // HOOKS
-  const dispatch = useDispatch();
-  const { search, region } = useSelector(selectControls);
-  const countries = useSelector((state) =>
-    selectVisibleCountries(state, { search, region }),
-  );
-  const { status, error, qty } = useSelector(selectCountriesInfo);
-
-  useEffect(() => {
-    if (!qty) {
-      dispatch(loadCountries());
-    }
-  }, [dispatch, qty]);
+  const [countries, { status, error }] = useCountries();
 
   return (
     <Container $list>
@@ -124,4 +104,4 @@ function List() {
   );
 }
 
-export default List;
+export default CountriesList;

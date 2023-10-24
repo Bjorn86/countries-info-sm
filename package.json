@@ -26,7 +26,6 @@
     "react-scripts": "5.0.1",
     "redux": "^4.2.1",
     "redux-persist": "^6.0.0",
-    "reselect": "^4.1.8",
     "styled-components": "^6.0.8",
     "uuid": "^9.0.1",
     "web-vitals": "^2.1.4"
@@ -80,6 +79,19 @@
         "rules": {
           "import/no-anonymous-default-export": "off",
           "import/no-extraneous-dependencies": "off"
+        }
+      },
+      {
+        "files": [
+          "src/features/**/*Slice.js"
+        ],
+        "rules": {
+          "no-param-reassign": [
+            "error",
+            {
+              "props": false
+            }
+          ]
         }
       }
     ]

@@ -1,8 +1,8 @@
-import Search from './Search';
+import ControlsSearch from './ControlsSearch';
 
 export default {
-  title: 'UI/Search',
-  component: Search,
+  title: 'Features/Controls search',
+  component: ControlsSearch,
   tags: ['autodocs'],
   argTypes: {
     formId: {
@@ -14,7 +14,7 @@ export default {
   },
 };
 
-const Template = (args) => <Search {...args} />;
+const Template = (args) => <ControlsSearch {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

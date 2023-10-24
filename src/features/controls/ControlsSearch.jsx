@@ -60,7 +60,7 @@ const Input = styled.input.attrs({
 `;
 
 // SEARCH COMPONENT
-function Search({ formId, placeholder }) {
+function ControlsSearch({ formId, placeholder }) {
   // HOOKS
   const [search, handleSearch] = useSearch();
 
@@ -76,13 +76,13 @@ function Search({ formId, placeholder }) {
   );
 }
 
-export default Search;
+export default ControlsSearch;
 
-Search.propTypes = {
+ControlsSearch.propTypes = {
   formId: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
 };
 
-Search.defaultProps = {
+ControlsSearch.defaultProps = {
   placeholder: '',
 };

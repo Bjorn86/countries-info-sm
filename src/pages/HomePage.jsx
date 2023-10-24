@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 
 // IMPORT COMPONENTS
 import Controls from '../components/Controls';
-import List from '../components/List';
+import CountriesList from '../features/countries/CountriesList';
 
 // HOMEPAGE COMPONENT
 function HomePage() {
@@ -18,7 +18,7 @@ function HomePage() {
         <title>Countries Info</title>
       </Helmet>
       <Controls />
-      <List />
+      <CountriesList />
     </>
   );
 }

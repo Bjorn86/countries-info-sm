@@ -1,5 +1,5 @@
 // IMPORT PACKAGES
-import { createSelector } from 'reselect';
+import { createSelector } from '@reduxjs/toolkit';
 
 // SELECTORS
 export const selectCountriesInfo = createSelector(
