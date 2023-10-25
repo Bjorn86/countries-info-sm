@@ -18,6 +18,7 @@ import axios from 'axios';
 import { themeReducer } from './features/theme/themeSlice';
 import { controlsReducer } from './features/controls/controlsSlice';
 import { countriesReducer } from './features/countries/countriesSlice';
+import { detailsReducer } from './features/details/detailsSlice';
 
 // OTHER IMPORTS
 import * as api from './utils/api';
@@ -27,6 +28,7 @@ const rootReducer = combineReducers({
   theme: themeReducer,
   controls: controlsReducer,
   countries: countriesReducer,
+  details: detailsReducer,
 });
 
 // PERSIST CONFIG

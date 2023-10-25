@@ -11,7 +11,7 @@ const initialState = {
 // ASYNC THUNKS
 export const loadCountries = createAsyncThunk(
   '@@country/loadCountries',
-  async (_, { extra: { client, api } }) => {
+  (_, { extra: { client, api } }) => {
     const res = client.get(api.ALL_COUNTRIES);
     return res;
   },

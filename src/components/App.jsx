@@ -11,7 +11,7 @@ import { lightTheme, darkTheme } from '../styles/themes';
 import Header from '../UI/Header/Header';
 import Main from './Main';
 import HomePage from '../pages/HomePage';
-import DetailPage from '../pages/DetailPage';
+import DetailsPage from '../pages/DetailsPage';
 import NotFound from '../pages/NotFound';
 
 // APP CORE COMPONENT
@@ -29,7 +29,7 @@ function App() {
       <Main>
         <Routes>
           <Route path='/' element={<HomePage />} />
-          <Route path='/country/:code' element={<DetailPage />} />
+          <Route path='/country/:code' element={<DetailsPage />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </Main>

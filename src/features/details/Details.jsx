@@ -1,19 +1,14 @@
 // IMPORT PACKAGES
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet-async';
 import { v4 as uuidv4 } from 'uuid';
 
 // IMPORT COMPONENTS
-import CountryLink from '../UI/CountryLink/CountryLink';
+import CountryLink from '../../UI/CountryLink/CountryLink';
 
 // IMPORT SELECTORS
-import { selectNeighbors } from '../store/details/detailsSelectors';
-
-// IMPORT ACTIONS
-import { loadNeighborsByBorders } from '../store/details/detailsActions';
+import { useNeighbors } from './useNeighbors';
 
 // STYLES
 const Article = styled.article`
@@ -179,8 +174,7 @@ function Details({
   borders,
 }) {
   // HOOKS
-  const dispatch = useDispatch();
-  const neighbors = useSelector(selectNeighbors);
+  const neighbors = useNeighbors(borders);
 
   // HANDLE LANGUAGES RENDER
   const handleLanguages = () =>
@@ -225,12 +219,6 @@ function Details({
       </ListItem>
     );
   };
-
-  useEffect(() => {
-    if (borders.length) {
-      dispatch(loadNeighborsByBorders(borders));
-    }
-  }, [borders, dispatch]);
 
   return (
     <>

@@ -1,23 +1,15 @@
 // IMPORT PACKAGES
-import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
 // IMPORT COMPONENTS
 import Container from '../components/Container';
 import Button from '../UI/Button/Button';
 import Preloader from '../UI/Preloader/Preloader';
-import Details from '../components/Details';
+import Details from '../features/details/Details';
 
-// IMPORT SELECTORS
-import { selectDetails } from '../store/details/detailsSelectors';
-
-// IMPORT ACTIONS
-import {
-  clearDetails,
-  loadCountryByCode,
-} from '../store/details/detailsActions';
+// IMPORT HOOKS
+import { useDetails } from '../features/details/useDetails';
 
 // STYLES
 const Info = styled.h1`
@@ -44,12 +36,11 @@ const Info = styled.h1`
   }
 `;
 
-function DetailPage() {
+function DetailsPage() {
   // HOOKS
   const { code } = useParams();
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const { currentCountry, status, error } = useSelector(selectDetails);
+  const { currentCountry, status, error } = useDetails(code);
 
   // HANDLE BUTTON BACK CLICK
   const handleBtnBackClick = () => {
@@ -59,14 +50,6 @@ function DetailPage() {
       navigate('/', { replace: true });
     }
   };
-
-  useEffect(() => {
-    dispatch(loadCountryByCode(code));
-
-    return () => {
-      dispatch(clearDetails());
-    };
-  }, [dispatch, code]);
 
   return (
     <Container $details>
@@ -78,4 +61,4 @@ function DetailPage() {
   );
 }
 
-export default DetailPage;
+export default DetailsPage;
