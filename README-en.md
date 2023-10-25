@@ -10,6 +10,7 @@ The project is a SPA with information about countries. Completed as part of an a
   - [Screenshot](#screenshot)
   - [Project directories](#project-directories)
   - [Project launch](#project-launch)
+  - [Project branches](#project-branches)
   - [Links](#links)
 - [Project progress](#project-progress)
   - [Technologies used](#technologies-used)
@@ -60,6 +61,11 @@ Provide users with information about countries, their capitals, languages, curre
 - `npm run storybook` - runs Storybook in development mode
 - `npm run build-storybook` - runs Storybook in production mode
 
+### Project branches
+
+- `master` - [main branch. Redux Toolkit version](https://github.com/Bjorn86/countries-info-sm/tree/main)
+- `redux` - [version using Redux](https://github.com/Bjorn86/countries-info-sm/tree/redux)
+
 ### Links
 
 - [Link to the project repository](https://github.com/Bjorn86/countries-info)
@@ -75,8 +81,8 @@ Provide users with information about countries, their capitals, languages, curre
 - [React](https://react.dev/)
 - [React Router](https://reactrouter.com/en/main)
 - [Redux](https://redux.js.org/)
-- [Redux Thunk](https://www.npmjs.com/package/redux-thunk)
-- [Reselect](https://www.npmjs.com/package/reselect)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Redux Persist](https://www.npmjs.com/package/redux-persist)
 - [Styled components](https://styled-components.com/)
 - [Axios](https://www.npmjs.com/package/axios)
 - [react-helmet-async](https://www.npmjs.com/package/react-helmet-async)
@@ -86,7 +92,7 @@ Provide users with information about countries, their capitals, languages, curre
 
 ### What I learned
 
-- Working with Redux
+- Working with the Redux Toolkit
 - Working with Styled components
 
 ## Author

@@ -12,6 +12,7 @@
   - [Screenshot](#screenshot)
   - [Директории проекта](#директории-проекта)
   - [Запуск проекта](#запуск-проекта)
+  - [Ветки проекта](#ветки-проекта)
   - [Ссылки](#ссылки)
 - [Ход выполнения проекта](#ход-выполнения-проекта)
   - [Используемые технологии](#используемые-технологии)
@@ -62,6 +63,11 @@
 - `npm run storybook` - запускает Storybook в режиме разработки
 - `npm run build-storybook` - запускает Storybook в режиме продакшн
 
+### Ветки проекта
+
+- `master` - [главная ветка. Версия с использованием Redux Toolkit](https://github.com/Bjorn86/countries-info-sm/tree/main)
+- `redux` - [версия с использованием Redux](https://github.com/Bjorn86/countries-info-sm/tree/redux)
+
 ### Ссылки
 
 - [Ссылка на репозиторий проекта](https://github.com/Bjorn86/countries-info-sm)
@@ -77,8 +83,8 @@
 - [React](https://react.dev/)
 - [React Router](https://reactrouter.com/en/main)
 - [Redux](https://redux.js.org/)
-- [Redux Thunk](https://www.npmjs.com/package/redux-thunk)
-- [Reselect](https://www.npmjs.com/package/reselect)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Redux Persist](https://www.npmjs.com/package/redux-persist)
 - [Styled components](https://styled-components.com/)
 - [Axios](https://www.npmjs.com/package/axios)
 - [react-helmet-async](https://www.npmjs.com/package/react-helmet-async)
@@ -88,7 +94,7 @@
 
 ### Чему я научился работая над проектом
 
-- Работе с Redux
+- Работе с Redux Toolkit
 - Работе с Styled components
 
 ## Автор
