@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/countries-info-sm/static/css/main.cf681cea.css",
-    "main.js": "/countries-info-sm/static/js/main.1d489d67.js",
+    "main.js": "/countries-info-sm/static/js/main.fb5bf332.js",
     "static/media/NunitoSans-ExtraBold.woff": "/countries-info-sm/static/media/NunitoSans-ExtraBold.dd38e29a0a91857568fd.woff",
     "static/media/NunitoSans-Bold.woff": "/countries-info-sm/static/media/NunitoSans-Bold.0bdd3b095d02935f6bfe.woff",
     "static/media/NunitoSans-Light.woff": "/countries-info-sm/static/media/NunitoSans-Light.b6057d4cbe9c49a8c6c2.woff",
@@ -19,10 +19,10 @@
     "static/media/chevron-down.svg": "/countries-info-sm/static/media/chevron-down.5dc527e0a3089d38fc4ab8fd69e2fcbd.svg",
     "static/media/chevron-down-filled.svg": "/countries-info-sm/static/media/chevron-down-filled.1d142674dfa90da34a803f5ebf9337b9.svg",
     "main.cf681cea.css.map": "/countries-info-sm/static/css/main.cf681cea.css.map",
-    "main.1d489d67.js.map": "/countries-info-sm/static/js/main.1d489d67.js.map"
+    "main.fb5bf332.js.map": "/countries-info-sm/static/js/main.fb5bf332.js.map"
   },
   "entrypoints": [
     "static/css/main.cf681cea.css",
-    "static/js/main.1d489d67.js"
+    "static/js/main.fb5bf332.js"
   ]
 }
