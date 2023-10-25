@@ -65,7 +65,7 @@
 
 ### Ветки проекта
 
-- `master` - [главная ветка. Версия с использованием Redux Toolkit](https://github.com/Bjorn86/countries-info-sm/tree/main)
+- `main` - [главная ветка. Версия с использованием Redux Toolkit](https://github.com/Bjorn86/countries-info-sm/tree/main)
 - `redux` - [версия с использованием Redux](https://github.com/Bjorn86/countries-info-sm/tree/redux)
 
 ### Ссылки

@@ -63,7 +63,7 @@ Provide users with information about countries, their capitals, languages, curre
 
 ### Project branches
 
-- `master` - [main branch. Redux Toolkit version](https://github.com/Bjorn86/countries-info-sm/tree/main)
+- `main` - [main branch. Redux Toolkit version](https://github.com/Bjorn86/countries-info-sm/tree/main)
 - `redux` - [version using Redux](https://github.com/Bjorn86/countries-info-sm/tree/redux)
 
 ### Links
