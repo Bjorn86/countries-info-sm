@@ -1,6 +1,6 @@
 # Project - Countries Info
 
-The project is a SPA with information about countries. Completed as part of an assignment of the [Frontend Mentor website](https://www.frontendmentor.io). The information about countries is provided by the [REST Countries API](https://restcountries.com).
+The project is a SPA with information about countries. The information about countries is provided by the [REST Countries API](https://restcountries.com).
 
 ## Table of contents
 
@@ -14,7 +14,6 @@ The project is a SPA with information about countries. Completed as part of an a
   - [Links](#links)
 - [Project progress](#project-progress)
   - [Technologies used](#technologies-used)
-  - [What I learned](#what-i-learned)
 - [Author](#author)
 
 ## Project overview
@@ -68,7 +67,6 @@ Provide users with information about countries, their capitals, languages, curre
 
 ### Links
 
-- [Link to the project repository](https://github.com/Bjorn86/countries-info)
 - [Link to the demo page of the project](https://bjorn86.github.io/countries-info/)
 
 ## Project progress
@@ -89,11 +87,6 @@ Provide users with information about countries, their capitals, languages, curre
 - [Storybook](https://storybook.js.org/)
 - Adaptive layout
 - Semantic layout
-
-### What I learned
-
-- Working with the Redux Toolkit
-- Working with Styled components
 
 ## Author
 
